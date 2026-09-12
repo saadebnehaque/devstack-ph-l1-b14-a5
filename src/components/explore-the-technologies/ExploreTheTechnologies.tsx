@@ -2,6 +2,7 @@ import { use, useState } from "react";
 import type { TechnologiesType } from "../../assets/types/type";
 import Technologies from "./technologies/Technologies";
 import YourStack from "./technologies/your-stack/YourStack";
+import { toast } from "react-toastify";
 
 export interface ExploreTheTechnologiesProps {
     technologiesPromise: Promise<TechnologiesType[]>
@@ -13,19 +14,39 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
 
     const [addedTech, setAddedTech] = useState<TechnologiesType[]>([])
 
+
+
+    // event handlers:
     const handleAddedToStack = (addedTechnology: TechnologiesType): void => {
 
         const isAlreadyAdded = addedTech.some(tech => tech.id === addedTechnology.id);
+
         if (!isAlreadyAdded) {
             setAddedTech([...addedTech, addedTechnology]);
+            toast.success(`${addedTechnology.name} is added to Stack`)
 
         } else {
-            const updatedStack = addedTech.filter(tech => tech.id !== addedTechnology.id);
-            setAddedTech(updatedStack);
+            toast.error(`${addedTechnology.name} is already added to Stack`)
         }
 
     }
-    console.log(addedTech);
+
+    // -----------------
+    const handleRemove = (technology: TechnologiesType): void => {
+        const updatedStack = addedTech.filter(tech => tech.id !== technology.id);
+        setAddedTech(updatedStack);
+        toast.warning(`${technology.name} is removed from Stack`);
+    }
+
+    // ----------------
+
+
+    const handleRemoveAll = (): void => {
+        setAddedTech([]);
+        toast.warning('All technologies removed from Stack');
+    }
+
+
 
 
     return (
@@ -42,6 +63,8 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
                 ></Technologies>
                 <YourStack
                     addedTech={addedTech}
+                    handleRemove={handleRemove}
+                    handleRemoveAll={handleRemoveAll}
                 ></YourStack>
             </div>
         </section>

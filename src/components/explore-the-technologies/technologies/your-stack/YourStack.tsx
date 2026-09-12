@@ -3,9 +3,11 @@ import YourStackCard from "./YourStackCard";
 
 export interface YourStackProps {
     addedTech: TechnologiesType[];
+    handleRemove: (a: TechnologiesType) => void;
+    handleRemoveAll: () => void;
 }
 
-export default function YourStack({ addedTech }: YourStackProps) {
+export default function YourStack({ addedTech, handleRemove, handleRemoveAll }: YourStackProps) {
 
     return (
         <div className="lg:col-span-3 h-fit p-5 rounded-2xl border border-[#f1f5f9] shadow-md">
@@ -18,7 +20,7 @@ export default function YourStack({ addedTech }: YourStackProps) {
                 </p>
             </div>
 
-            <div className="mt-4 space-y-1.5">
+            <div className="mt-4">
                 {
                     addedTech.length === 0
                         ?
@@ -26,11 +28,23 @@ export default function YourStack({ addedTech }: YourStackProps) {
                             <span>Your stack is empty.</span>
                         </div>
                         :
-                        addedTech.map(tech =>
-                            <YourStackCard
-                                key={tech.id}
-                                tech={tech}
-                            ></YourStackCard>)
+                        <div className="flex flex-col gap-1.5">
+                            {
+                                addedTech.map(tech =>
+                                    <YourStackCard
+                                        key={tech.id}
+                                        tech={tech}
+                                        handleRemove={handleRemove}
+                                    ></YourStackCard>)
+                            }
+                            <button
+                                onClick={() => handleRemoveAll()}
+                                className="lg:mt-11 btn btn-error btn-outline rounded-lg inter font-bold"
+                            >
+                                Remove All
+                            </button>
+                        </div>
+
                 }
 
 

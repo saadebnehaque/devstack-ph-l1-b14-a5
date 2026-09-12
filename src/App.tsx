@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import type { TechnologiesType } from './assets/types/type.ts';
 import { Suspense } from "react";
 import ExploreTheTechnologies from "./components/explore-the-technologies/ExploreTheTechnologies.tsx";
+import { Flip, ToastContainer } from "react-toastify";
 
 
 const technologiesPromise = async (): Promise<TechnologiesType[]> => {
@@ -28,6 +29,15 @@ function App() {
         <ExploreTheTechnologies technologiesPromise={technologiesPromise()}></ExploreTheTechnologies>
       </Suspense>
       <Footer></Footer>
+
+
+      <ToastContainer
+        position="bottom-right"
+        newestOnTop={true}
+        transition={Flip}
+        closeOnClick={true}
+        pauseOnFocusLoss={false}
+      ></ToastContainer>
     </>
   )
 
