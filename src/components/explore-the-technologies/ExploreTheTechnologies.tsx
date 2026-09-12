@@ -15,11 +15,17 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
 
     const handleAddedToStack = (addedTechnology: TechnologiesType): void => {
 
+        const isAlreadyAdded = addedTech.some(tech => tech.id === addedTechnology.id);
+        if (!isAlreadyAdded) {
+            setAddedTech([...addedTech, addedTechnology]);
 
+        } else {
+            const updatedStack = addedTech.filter(tech => tech.id !== addedTechnology.id);
+            setAddedTech(updatedStack);
+        }
 
-        setAddedTech([...addedTech, addedTechnology]);
-        console.log(addedTech);
     }
+    console.log(addedTech);
 
 
     return (
@@ -34,7 +40,9 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
                     handleAddedToStack={handleAddedToStack}
                     addedTech={addedTech}
                 ></Technologies>
-                <YourStack></YourStack>
+                <YourStack
+                    addedTech={addedTech}
+                ></YourStack>
             </div>
         </section>
     )

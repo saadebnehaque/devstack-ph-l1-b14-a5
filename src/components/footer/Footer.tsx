@@ -36,8 +36,8 @@ const Footer = () => {
                 <div className='text-xs text-[#9CA3AF] flex items-center justify-between pt-4 lg:pt-8 px-6 lg:px-0 border-t border-[#F1F5F9]'>
                     <span>© 2026 Dev Stack. All rights reserved.</span>
                     <ul className='flex items-center gap-2 lg:gap-6'>
-                        <li><a href="">Privacy</a></li>
-                        <li><a href="">Terms</a></li>
+                        <li className='hover:underline'><a href="">Privacy</a></li>
+                        <li className='hover:underline'><a href="">Terms</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import { GiCheckMark } from "react-icons/gi";
 import type { TechnologiesType } from "../../../assets/types/type";
 
 export interface TechnologyCardProps {
@@ -42,7 +43,9 @@ export default function TechnologyCard({ technology, handleAddedToStack, isAdded
                         onClick={() => handleAddedToStack(technology)}
                         className={`btn rounded-lg text-xs lg:text-sm inter ${isAdded ? 'bg-secondary-content text-secondary' : ' bg-[#111827] text-white'}`}
                     >
-                        Add to Stack
+                        {
+                            isAdded ? <><GiCheckMark></GiCheckMark> Added to Stack</> : ' Add to Stack'
+                        }
                     </button>
                 </div>
             </div>
