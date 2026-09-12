@@ -8,7 +8,7 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
 
     return (
         <>
-            <div className="p-4 lg:p-5 rounded-xl lg:rounded-2xl shadow-md shadow-black/5 space-y-2.5 lg:space-y-4 border border-[#F3F4F6] lg:border-[#F1F5F9]">
+            <div className="p-4 lg:p-5 rounded-xl lg:rounded-2xl shadow hover:shadow-lg shadow-black/5 space-y-2.5 lg:space-y-4 border border-[#F3F4F6] lg:border-[#F1F5F9] transition-all duration-200 ease-in-out">
                 <div>
                     <div className="flex justify-between items-start">
                         <div className="flex lg:flex-col items-center lg:items-start gap-3">

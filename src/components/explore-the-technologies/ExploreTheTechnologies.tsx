@@ -1,6 +1,7 @@
 import { use } from "react";
 import type { TechnologiesType } from "../../assets/types/type";
 import Technologies from "./technologies/Technologies";
+import YourStack from "./technologies/your-stack/YourStack";
 
 export interface ExploreTheTechnologiesProps {
     technologiesPromise: Promise<TechnologiesType[]>
@@ -17,8 +18,9 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
                 <h4 className="inter text-[#111827] text-2xl lg:text-4xl font-bold lg:font-extrabold text-center lg:text-left mb-1 lg:mb-2">Explore the <span className="inter bg-linear-to-r from-[#EC4899] to-[#8B5CF6] text-transparent bg-clip-text ">Technologies</span></h4>
                 <p className=" text-center lg:text-left text-[#6B7280] lg:text-[#64748B] text-xs lg:text-[16px] ">Pick one technology per category to build your ideal stack.</p>
             </div>
-            <div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8">
                 <Technologies technologiesData={technologiesData}></Technologies>
+                <YourStack></YourStack>
             </div>
         </section>
     )

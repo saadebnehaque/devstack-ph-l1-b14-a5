@@ -10,3 +10,12 @@ export interface TechnologiesType {
     badge: string,
     badgeStyle: string,
 };
+
+export interface FootLinkType {
+
+    category: string,
+    links: { name: string, path: string }[],
+
+
+
+}

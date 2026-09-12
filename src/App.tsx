@@ -20,10 +20,10 @@ function App() {
 
   return (
     <>
-      <header>
-        <Navbar></Navbar>
-        <Banner></Banner>
-      </header>
+
+      <Navbar></Navbar>
+      <Banner></Banner>
+
       <Suspense>
         <ExploreTheTechnologies technologiesPromise={technologiesPromise()}></ExploreTheTechnologies>
       </Suspense>

@@ -1,4 +1,3 @@
-
 [
     {
         "id": "react",
@@ -65,7 +64,7 @@
         "name": "PostgreSQL",
         "category": "Database",
         "description": "A powerful, open-source object-relational database system with proven reliability.",
-        "icon": "https://icon.icepanel.io/Technology/svg/PostgreSQL.svg",
+        "icon": "https://icon.icepanel.io/Technology/svg/PostgresSQL.svg",
         "alt": "PostgreSQL icon",
         "rating": 4.9,
         "difficulty": "Intermediate",
