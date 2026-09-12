@@ -13,8 +13,9 @@ const Banner = () => {
                     className="max-w-sm rounded-lg  lg:py-12.5 lg:px-17.5"
                 />
                 <div>
-                    <h1 className="text-3xl lg:text-6xl text-center lg:text-left inter font-extrabold">Build Your Ideal <span className='inter text-transparent bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text '>Development Stack</span></h1>
-                    <p className="py-6 text-center lg:text-left text-[14px] lg:text-[18px] lg:inter">
+                    <h1 className=" text-3xl lg:text-6xl text-center lg:text-left inter font-extrabold">Build Your Ideal <span className='inter text-transparent bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text '>Development Stack</span></h1>
+
+                    <p className="py-6 text-center lg:text-left text-[14px] lg:text-[18px] lg:inter  text-[#4B5563] leading-5.5 lg:leading-6.5">
                         Explore frontend, backend, database, and tooling options,
                         compare them side by side, and put together the stack that fits your
                         next project.
