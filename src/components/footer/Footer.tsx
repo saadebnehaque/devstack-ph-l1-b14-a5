@@ -12,11 +12,11 @@ const Footer = () => {
                         <img src={logo} alt="Dev Stack logo" />
                         <p className=' text-[#64748B] text-xs leading-5'>Curated tools, technologies, and resources for developers building modern software.</p>
                         <ul className=' lg:font-semibold text-xs font-semibold flex gap-4'>
-                            <li><a href="#">GitHub</a></li>
+                            <li><a href="">GitHub</a></li>
                             <li className=' lg:hidden'>•</li>
-                            <li><a href="#">Twitter</a></li>
+                            <li><a href="">Twitter</a></li>
                             <li className=' lg:hidden'>•</li>
-                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="">LinkedIn</a></li>
                         </ul>
                     </div>
 
