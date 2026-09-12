@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { TechnologiesType } from "../../assets/types/type";
 import Technologies from "./technologies/Technologies";
 import YourStack from "./technologies/your-stack/YourStack";
@@ -11,6 +11,16 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
 
     const technologiesData = use(technologiesPromise);
 
+    const [addedTech, setAddedTech] = useState<TechnologiesType[]>([])
+
+    const handleAddedToStack = (addedTechnology: TechnologiesType): void => {
+
+
+
+        setAddedTech([...addedTech, addedTechnology]);
+        console.log(addedTech);
+    }
+
 
     return (
         <section className=" container mx-auto p-4 lg:p-8 mt-10 lg:mt-28 space-y-5 lg:space-y-10">
@@ -19,7 +29,11 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
                 <p className=" text-center lg:text-left text-[#6B7280] lg:text-[#64748B] text-xs lg:text-[16px] ">Pick one technology per category to build your ideal stack.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8">
-                <Technologies technologiesData={technologiesData}></Technologies>
+                <Technologies
+                    technologiesData={technologiesData}
+                    handleAddedToStack={handleAddedToStack}
+                    addedTech={addedTech}
+                ></Technologies>
                 <YourStack></YourStack>
             </div>
         </section>

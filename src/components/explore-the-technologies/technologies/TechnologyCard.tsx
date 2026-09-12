@@ -2,13 +2,17 @@ import type { TechnologiesType } from "../../../assets/types/type";
 
 export interface TechnologyCardProps {
     technology: TechnologiesType;
+    handleAddedToStack: (addedTech: TechnologiesType) => void;
+    isAdded: boolean;
 }
 
-export default function TechnologyCard({ technology }: TechnologyCardProps) {
+export default function TechnologyCard({ technology, handleAddedToStack, isAdded }: TechnologyCardProps) {
 
     return (
         <>
-            <div className="p-4 lg:p-5 rounded-xl lg:rounded-2xl shadow hover:shadow-lg shadow-black/5 space-y-2.5 lg:space-y-4 border border-[#F3F4F6] lg:border-[#F1F5F9] transition-all duration-200 ease-in-out">
+            <div
+                className={`p-4 lg:p-5 rounded-xl lg:rounded-2xl shadow hover:shadow-lg space-y-2.5 lg:space-y-4 border transition-all duration-200 ease-in-out ${isAdded ? 'border-secondary shadow-secondary-content' : 'border-[#F3F4F6] lg:border-[#F1F5F9] shadow-black/5'}`}
+            >
                 <div>
                     <div className="flex justify-between items-start">
                         <div className="flex lg:flex-col items-center lg:items-start gap-3">
@@ -34,7 +38,12 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
                         <p className="text-[#6B7280] lg:text-[#64748B] text-xs font-medium "> {technology.difficulty}</p>
                         <p className="font-semibold text-[#F59E0B] text-xs">★ {technology.rating}</p>
                     </div>
-                    <button className="btn rounded-lg bg-[#111827] text-white text-xs lg:text-sm inter">Add to Stack</button>
+                    <button
+                        onClick={() => handleAddedToStack(technology)}
+                        className={`btn rounded-lg text-xs lg:text-sm inter ${isAdded ? 'bg-secondary-content text-secondary' : ' bg-[#111827] text-white'}`}
+                    >
+                        Add to Stack
+                    </button>
                 </div>
             </div>
         </>
