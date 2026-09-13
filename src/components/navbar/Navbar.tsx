@@ -17,7 +17,7 @@ const Navbar = () => {
                             tabIndex={-1}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             {
-                                menus.map((menu, i) => <li key={i} className=' hover:text-[#DB2777] font-semibold active:bg-white'><a>{menu}</a></li>)
+                                menus.map((menu, i) => <li key={i} className=' hover:text-secondary font-semibold active:bg-white'><a>{menu}</a></li>)
                             }
                         </ul>
                     </div>

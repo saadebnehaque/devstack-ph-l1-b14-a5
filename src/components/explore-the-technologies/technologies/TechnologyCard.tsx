@@ -30,14 +30,14 @@ export default function TechnologyCard({ technology, handleAddedToStack, isAdded
                             {technology.badge}
                         </span>
                     </div>
-                    <p className=" mt-2.5 lg:mt-1.5 text-[#485563] lg:text-[#64748B] text-xs lg:text-sm leading-[19.5px] lg:leading-6 ">{technology.description}</p>
+                    <p className=" mt-2.5 lg:mt-1.5 text-gray-500 text-xs lg:text-sm leading-[19.5px] lg:leading-6 ">{technology.description}</p>
                 </div>
                 {/* ------------- */}
                 <div className="flex flex-col gap-2.5 lg:gap-4">
                     <div className="flex items-center justify-between pt-3 lg:pt-2">
-                        <span className="px-2 py-0.5 bg-[#F1F5F9] text-[#475569] font-medium text-xs rounded">{technology.category}</span>
-                        <p className="text-[#6B7280] lg:text-[#64748B] text-xs font-medium "> {technology.difficulty}</p>
-                        <p className="font-semibold text-[#F59E0B] text-xs">★ {technology.rating}</p>
+                        <span className="px-2 py-0.5 bg-base-300 text-gray-600 font-medium text-xs rounded">{technology.category}</span>
+                        <p className="text-gray-500  text-xs font-medium "> {technology.difficulty}</p>
+                        <p className="font-semibold text-warning text-xs">★ {technology.rating}</p>
                     </div>
                     <button
                         onClick={() => handleAddedToStack(technology)}

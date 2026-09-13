@@ -5,6 +5,7 @@ import type { TechnologiesType } from './assets/types/type.ts';
 import { Suspense } from "react";
 import ExploreTheTechnologies from "./components/explore-the-technologies/ExploreTheTechnologies.tsx";
 import { Flip, ToastContainer } from "react-toastify";
+import LoadingSpinner from "./components/loading/LoadingSpinner.tsx";
 
 
 const technologiesPromise = async (): Promise<TechnologiesType[]> => {
@@ -25,11 +26,10 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
 
-      <Suspense>
+      <Suspense fallback={<LoadingSpinner></LoadingSpinner>}>
         <ExploreTheTechnologies technologiesPromise={technologiesPromise()}></ExploreTheTechnologies>
       </Suspense>
       <Footer></Footer>
-
 
       <ToastContainer
         position="bottom-right"

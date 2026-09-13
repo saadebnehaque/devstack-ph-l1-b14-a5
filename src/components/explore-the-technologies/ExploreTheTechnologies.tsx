@@ -52,8 +52,9 @@ export default function ExploreTheTechnologies({ technologiesPromise }: ExploreT
     return (
         <section className=" container mx-auto p-4 lg:p-8 mt-10 lg:mt-28 space-y-5 lg:space-y-10">
             <div>
-                <h4 className="inter text-[#111827] text-2xl lg:text-4xl font-bold lg:font-extrabold text-center lg:text-left mb-1 lg:mb-2">Explore the <span className="inter bg-linear-to-r from-[#EC4899] to-[#8B5CF6] text-transparent bg-clip-text ">Technologies</span></h4>
-                <p className=" text-center lg:text-left text-[#6B7280] lg:text-[#64748B] text-xs lg:text-[16px] ">Pick one technology per category to build your ideal stack.</p>
+                <h4 className="inter text-[#111827] text-2xl lg:text-4xl font-bold lg:font-extrabold text-center lg:text-left mb-1 lg:mb-2">Explore the <span className="inter bg-linear-to-r from-secondary to-primary text-transparent bg-clip-text ">Technologies</span></h4>
+                <p className=" text-center lg:text-left text-gray-500  text-xs lg:text-[16px] ">Pick one technology per category to build your ideal stack.</p>
+
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8">
                 <Technologies
