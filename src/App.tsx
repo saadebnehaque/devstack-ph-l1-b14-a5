@@ -37,6 +37,7 @@ function App() {
         transition={Flip}
         closeOnClick={true}
         pauseOnFocusLoss={false}
+        autoClose={2500}
       ></ToastContainer>
     </>
   )
