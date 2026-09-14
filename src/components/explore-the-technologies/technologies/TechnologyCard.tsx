@@ -39,14 +39,17 @@ export default function TechnologyCard({ technology, handleAddedToStack, isAdded
                         <p className="text-gray-500  text-xs font-medium "> {technology.difficulty}</p>
                         <p className="font-semibold text-warning text-xs">★ {technology.rating}</p>
                     </div>
-                    <button
-                        onClick={() => handleAddedToStack(technology)}
-                        className={`btn rounded-lg text-xs lg:text-sm inter ${isAdded ? 'bg-secondary-content text-secondary' : ' bg-[#111827] text-white'}`}
+                    <div
+                    onClick={() => handleAddedToStack(technology)}
                     >
-                        {
-                            isAdded ? <><GiCheckMark></GiCheckMark> Added to Stack</> : ' Add to Stack'
-                        }
-                    </button>
+                        <button
+                            className={`btn w-full rounded-lg text-xs lg:text-sm inter ${isAdded ? 'bg-secondary-content text-secondary btn-disabled' : ' bg-[#111827] text-white'}`}
+                        >
+                            {
+                                isAdded ? <><GiCheckMark></GiCheckMark> Added to Stack</> : ' Add to Stack'
+                            }
+                        </button>
+                    </div>
                 </div>
             </div>
         </>
