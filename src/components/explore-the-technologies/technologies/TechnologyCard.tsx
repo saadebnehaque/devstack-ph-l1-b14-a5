@@ -12,7 +12,7 @@ export default function TechnologyCard({ technology, handleAddedToStack, isAdded
     return (
         <>
             <div
-                className={`p-4 lg:p-5 rounded-xl lg:rounded-2xl shadow hover:shadow-lg space-y-2.5 lg:space-y-4 border transition-all duration-200 ease-in-out ${isAdded ? 'border-secondary shadow-secondary-content' : 'border-[#F3F4F6] lg:border-[#F1F5F9] shadow-black/5'}`}
+                className={`p-4 lg:p-5 rounded-xl lg:rounded-2xl shadow hover:shadow-lg space-y-2.5 lg:space-y-4 border transition-all duration-200 ease-in-out ${isAdded ? 'border-secondary shadow-secondary-content' : 'border-[#F3F4F6] lg:border-[#F1F5F9] shadow-black/5'} flex flex-col justify-between`}
             >
                 <div>
                     <div className="flex justify-between items-start">
@@ -39,17 +39,16 @@ export default function TechnologyCard({ technology, handleAddedToStack, isAdded
                         <p className="text-gray-500  text-xs font-medium "> {technology.difficulty}</p>
                         <p className="font-semibold text-warning text-xs">★ {technology.rating}</p>
                     </div>
-                    <div
-                    onClick={() => handleAddedToStack(technology)}
+                </div>
+                <div onClick={() => handleAddedToStack(technology)}>
+                    <button
+                        disabled={isAdded ? true : false}
+                        className={`btn w-full rounded-lg text-xs lg:text-sm inter ${isAdded ? 'bg-secondary-content text-secondary ' : ' bg-[#111827] text-white'}`}
                     >
-                        <button
-                            className={`btn w-full rounded-lg text-xs lg:text-sm inter ${isAdded ? 'bg-secondary-content text-secondary btn-disabled' : ' bg-[#111827] text-white'}`}
-                        >
-                            {
-                                isAdded ? <><GiCheckMark></GiCheckMark> Added to Stack</> : ' Add to Stack'
-                            }
-                        </button>
-                    </div>
+                        {
+                            isAdded ? <><GiCheckMark></GiCheckMark> Added to Stack</> : ' Add to Stack'
+                        }
+                    </button>
                 </div>
             </div>
         </>
